@@ -8,13 +8,13 @@
 <div sec:authorize="isAuthenticated()">
     <h2>인증된 직원 정보</h2>
     <p>아이디: [[${#authentication.principal.username}]]</p>
-    <p>권한:
-    <ul>
-        <th:block th:each="auth : ${#authentication.authorities}">
-            <li th:text="${auth.authority}"></li>
-        </th:block>
-    </ul>
-    </p>
+<!--    <p>권한:-->
+<!--    <ul>-->
+<!--        <th:block th:each="auth : ${#authentication.authorities}">-->
+<!--            <li th:text="${auth.authority}"></li>-->
+<!--        </th:block>-->
+<!--    </ul>-->
+<!--    </p>-->
 </div>
 
 <div sec:authorize="!isAuthenticated()">
