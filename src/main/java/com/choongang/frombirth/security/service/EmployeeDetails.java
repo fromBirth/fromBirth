@@ -25,7 +25,8 @@ public class EmployeeDetails implements UserDetails {
         List<GrantedAuthority> list = new ArrayList<>();
 
         // departmentName과 positionName을 권한으로 설정
-        list.add(new SimpleGrantedAuthority("ROLE_" + getNumber()));
+//        list.add(new SimpleGrantedAuthority("ROLE_" + getNumber()));
+
         System.out.println(list);
         return list; // 권한 목록을 반환
     }
@@ -40,11 +41,6 @@ public class EmployeeDetails implements UserDetails {
     public String getUsername() {
         return String.valueOf(userVO.getUsername());
     }
-
-    public String getNumber() {
-        return String.valueOf(userVO.getNumber());
-    }
-
 
     //계정이 만료되지 않았습니까? (true = 네)
     @Override

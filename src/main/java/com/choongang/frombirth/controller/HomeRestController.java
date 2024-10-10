@@ -33,7 +33,7 @@ public class HomeRestController {
 
             int isRegistered = homeService.registerUser(userVO);
 
-            if (isRegistered==0) {
+            if (isRegistered==1) {
                 return new ResponseEntity<>("User registered successfully", HttpStatus.CREATED);
             } else {
                 return new ResponseEntity<>("User registration failed", HttpStatus.INTERNAL_SERVER_ERROR);

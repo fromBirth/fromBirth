@@ -5,8 +5,7 @@ const webpack = require('webpack');
 module.exports = {
     context: path.resolve(__dirname, 'src/main/react'),
     entry: {
-        // employee: './employee/employee.js'
-        // 리엑트 파일 추가
+        login: './users/Login.js', // 로그인
     },
     devtool: 'sourcemaps',
     cache: true,

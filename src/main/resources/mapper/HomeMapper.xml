@@ -8,19 +8,16 @@
     <insert id="registerUser" parameterType="UserVO">
         INSERT INTO users (
             username,
-            password,
-            number
+            password
         ) VALUES (
             #{username},
-            #{password},
-            #{number}
+            #{password}
         )
     </insert>
     <select id="login" parameterType="String" resultType="UserVO">
         SELECT
             u.username,
-            u.password,
-            u.number
+            u.password
         FROM public.users u
         WHERE u.username = #{username}
     </select>

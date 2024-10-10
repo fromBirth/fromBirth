@@ -1,0 +1,11 @@
+-- 예시
+-- 1. 고객사
+create table m_customer (
+	customer_no	SERIAL	NOT NULL, -- 고객 번호
+	customer_name	VARCHAR(30)	NOT NULL, -- 고객 이름
+	customer_insert_date	timestamp	NOT NULL	DEFAULT CURRENT_TIMESTAMP, -- 등록일시
+	customer_update_date	timestamp	NULL, -- 수정일시
+	customer_delete_yn	VARCHAR(20)	NOT NULL DEFAULT 'N', -- 삭제 여부 기본값 'N'
+	customer_delete_date	timestamp	NULL, -- 삭제 일시
+	primary key (customer_no) -- 기본 키 설정
+);
