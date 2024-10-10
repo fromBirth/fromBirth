@@ -26,6 +26,7 @@ public class EmployeeDetails implements UserDetails {
 
         // departmentName과 positionName을 권한으로 설정
 //        list.add(new SimpleGrantedAuthority("ROLE_" + getNumber()));
+
         System.out.println(list);
         return list; // 권한 목록을 반환
     }
