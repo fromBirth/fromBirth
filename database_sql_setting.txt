@@ -1,0 +1,117 @@
+CREATE TABLE "users" (
+	"user_id"	VARCHAR(50)		NOT NULL,
+	"username"	VARCHAR(50)		NOT NULL,
+	"password_hash"	VARCHAR(255)		NOT NULL,
+	"created_at"	TIMESTAMP DEFAULT CURRENT_TIMESTAMP		NOT NULL,
+	"updated_at"	TIMESTAMP		NULL
+);
+
+CREATE TABLE "children" (
+	"child_id"	INT		NOT NULL,
+	"user_id"	VARCHAR(50)		NOT NULL,
+	"name"	VARCHAR(50)		NOT NULL,
+	"order"	INT		NULL,
+	"birth_date"	DATE		NULL,
+	"gender"	VARCHAR(10)		NULL,
+	"blood_type"	VARCHAR(3)		NULL,
+	"created_at"	TIMESTAMP DEFAULT CURRENT_TIMESTAMP		NOT NULL,
+	"updated_at"	TIMESTAMP		NULL,
+	"birth_weight"	INT		NULL,
+	"birth_time"	time		NULL
+);
+
+CREATE TABLE "record" (
+	"record_id"	SERIAL		NOT NULL,
+	"child_id"	INT		NOT NULL,
+	"record_date"	DATE		NOT NULL,
+	"height"	FLOAT		NULL,
+	"weight"	FLOAT		NULL,
+	"content"	TEXT		NULL,
+	"video_result"	INT		NULL,
+	"created_at"	TIMESTAMP DEFAULT CURRENT_TIMESTAMP		NULL,
+	"updated_at"	TIMESTAMP		NULL
+);
+
+CREATE TABLE "weekly_report" (
+	"report_id"	SERIAL		NOT NULL,
+	"child_id"	INT		NOT NULL,
+	"risk_level"	INT		NULL,
+	"feedback"	VARCHAR(100)		NULL,
+	"created_at"	TIMESTAMP DEFAULT CURRENT_TIMESTAMP		NOT NULL
+);
+
+CREATE TABLE "user_alert" (
+	"notification_id"	SERIAL		NOT NULL,
+	"user_id"	VARCHAR(50)		NOT NULL,
+	"message"	TEXT		NOT NULL,
+	"is_read"	BOOLEAN	DEFAULT FALSE	NOT NULL,
+	"created_at"	TIMESTAMP DEFAULT CURRENT_TIMESTAMP		NOT NULL
+);
+
+CREATE TABLE "photo" (
+	"photo_id"	SERIAL		NOT NULL,
+	"record_id"	INT		NOT NULL,
+	"url"	VARCHAR(255)		NULL,
+	"created_at"	TIMESTAMP DEFAULT CURRENT_TIMESTAMP		NOT NULL
+);
+
+ALTER TABLE "users" ADD CONSTRAINT "PK_USERS" PRIMARY KEY (
+	"user_id"
+);
+
+ALTER TABLE "children" ADD CONSTRAINT "PK_CHILDREN" PRIMARY KEY (
+	"child_id"
+);
+
+ALTER TABLE "record" ADD CONSTRAINT "PK_RECORD" PRIMARY KEY (
+	"record_id"
+);
+
+ALTER TABLE "weekly_report" ADD CONSTRAINT "PK_WEEKLY_REPORT" PRIMARY KEY (
+	"report_id"
+);
+
+ALTER TABLE "user_alert" ADD CONSTRAINT "PK_USER_ALERT" PRIMARY KEY (
+	"notification_id"
+);
+
+ALTER TABLE "photo" ADD CONSTRAINT "PK_PHOTO" PRIMARY KEY (
+	"photo_id"
+);
+
+ALTER TABLE "children" ADD CONSTRAINT "FK_users_TO_children_1" FOREIGN KEY (
+	"user_id"
+)
+REFERENCES "users" (
+	"user_id"
+) ON DELETE CASCADE;
+
+ALTER TABLE "record" ADD CONSTRAINT "FK_children_TO_record_1" FOREIGN KEY (
+	"child_id"
+)
+REFERENCES "children" (
+	"child_id"
+) ON DELETE CASCADE;
+
+ALTER TABLE "weekly_report" ADD CONSTRAINT "FK_children_TO_weekly_report_1" FOREIGN KEY (
+	"child_id"
+)
+REFERENCES "children" (
+	"child_id"
+) ON DELETE CASCADE;
+
+ALTER TABLE "user_alert" ADD CONSTRAINT "FK_users_TO_user_alert_1" FOREIGN KEY (
+	"user_id"
+)
+REFERENCES "users" (
+	"user_id"
+) ON DELETE CASCADE;
+
+ALTER TABLE "photo" ADD CONSTRAINT "FK_record_TO_photo_1" FOREIGN KEY (
+	"record_id"
+)
+REFERENCES "record" (
+	"record_id"
+) ON DELETE CASCADE;
+
+
