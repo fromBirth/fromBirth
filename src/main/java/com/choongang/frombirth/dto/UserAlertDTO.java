@@ -9,11 +9,10 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
+public class UserAlertDTO {
+    private Integer notificationId;
     private String userId;
-    private String username;
-    private String passwordHash;
+    private String message;
+    private Boolean isRead;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 }
-

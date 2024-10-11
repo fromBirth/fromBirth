@@ -9,11 +9,9 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
-    private String userId;
-    private String username;
-    private String passwordHash;
+public class PhotoDTO {
+    private Integer photoId;
+    private Integer recordId;
+    private String url;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 }
-
