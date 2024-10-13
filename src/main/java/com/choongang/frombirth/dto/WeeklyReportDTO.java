@@ -9,11 +9,11 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
-    private String userId;
-    private String username;
-    private String passwordHash;
+public class WeeklyReportDTO {
+    private Integer reportId;
+    private Integer childId;
+    private Integer riskLevel;
+    private String feedback;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 }
 

@@ -43,6 +43,8 @@ dependencies {
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
     implementation 'org.projectlombok:lombok:1.18.24'  // Lombok 사용
     annotationProcessor 'org.projectlombok:lombok:1.18.24'  // annotationProcessor 추가
+    implementation 'org.modelmapper:modelmapper:3.1.0' // 모델매퍼
+
 }
 
 //tasks.named('test') {
