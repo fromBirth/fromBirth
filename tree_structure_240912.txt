@@ -95,10 +95,7 @@ src
 │  │  │  │     ├─ OrderRegisterApprovalDetail.js
 │  │  │  │     └─ OrderReport.js
 │  │  │  ├─ layout
-│  │  │  │  ├─ Footer.js
-│  │  │  │  ├─ Header.js
 │  │  │  │  ├─ Layout.js
-│  │  │  │  └─ Sidebar.js
 │  │  │  └─ util
 │  │  │     └─ dateUtils.js
 │  │  └─ resources

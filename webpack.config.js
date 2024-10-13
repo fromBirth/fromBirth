@@ -12,24 +12,25 @@ module.exports = {
     context: path.resolve(__dirname, 'src/main/react'), // 기본 디렉토리 설정
     entry: {
         login: './components/auth/Login.js', // 로그인
-        main: './components/main/Main.js', // 메인 대시보드
+        login: './components/auth/Signup.js', // 사인업
+        main: './components/main/Main.js', // 메인
 
         // Sales 관련 엔트리 포인트
-        order: `${salesPath}Order.js`, // 주문 등록or상세or수정
-        orderList: `${salesPath}OrderList.js`, // 주문 목록 or 주문 등록 승인
-        orderReport: `${salesPath}OrderReport.js`, // 영업실적 보고서
+        // order: `${salesPath}Order.js`, // 주문 등록or상세or수정
+        // orderList: `${salesPath}OrderList.js`, // 주문 목록 or 주문 등록 승인
+        // orderReport: `${salesPath}OrderReport.js`, // 영업실적 보고서
 
         // Product 관련 엔트리 포인트
-        productList: `${productPath}ProductList.js`, // 상품 목록
-        productPrice: `${pricePath}Price.js`, // 고객사별 상품 가격 관리(목록/등록/수정)
-        productCategory: `${productPath}ProductCategory.js`, // 상품 카테고리 관리(목록/등록/수정)
-
-        // Customer 관련 엔트리 포인트
-        customerList: `${customerPath}CustomerList.js`, // 고객사 목록
-
-        // HR 관련 엔트리 포인트
-        employeeList: `${hrPath}EmployeeList.js`, // 직원 목록
-        employeeRegister: `${hrPath}EmployeeRegister.js`, // 직원 등록
+        // productList: `${productPath}ProductList.js`, // 상품 목록
+        // productPrice: `${pricePath}Price.js`, // 고객사별 상품 가격 관리(목록/등록/수정)
+        // productCategory: `${productPath}ProductCategory.js`, // 상품 카테고리 관리(목록/등록/수정)
+        //
+        // // Customer 관련 엔트리 포인트
+        // customerList: `${customerPath}CustomerList.js`, // 고객사 목록
+        //
+        // // HR 관련 엔트리 포인트
+        // employeeList: `${hrPath}EmployeeList.js`, // 직원 목록
+        // employeeRegister: `${hrPath}EmployeeRegister.js`, // 직원 등록
     },
     devtool: 'sourcemaps', // 소스 맵 생성 설정
     cache: true, // 캐싱 활성화
